@@ -1,10 +1,10 @@
 [package]
-name = "blueprint"
+name = "voxprint"
 version = "0.1.0"
 edition = "2021"
 
 [[bin]]
-name = "blueprint"
+name = "voxprint"
 path = "src/main.rs"
 
 [dependencies]

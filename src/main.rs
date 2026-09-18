@@ -12,7 +12,7 @@ use std::time::Duration;
 /// Blueprint — extract 3-5 key insights from a voice recording
 #[derive(Parser, Debug)]
 #[command(
-    name = "blueprint",
+    name = "voxprint",
     about = "Transcribe a voice recording and extract blueprint-level insights",
     long_about = "Transcribes audio using local whisper-cpp, then extracts 3-5 key blueprint \
                   points using a local Ollama model. Output is saved as a Markdown file."

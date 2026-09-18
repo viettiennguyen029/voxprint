@@ -1,6 +1,6 @@
-# 🗺 Blueprint CLI
+# 🗺 Voxprint CLI
 
-Extract 3–7 blueprint-level insights from any voice recording — runs entirely **locally**, no cloud APIs required.
+Extract 3–7 blueprint-level insights from any voice recording — runs entirely **locally**, no cloud APIs required. (Turn voice into blueprints.)
 
 **Pipeline:** Voice file → `afconvert` (WAV) → `whisper-cli` (transcription) → Ollama/`gemma3:4b` (extraction) → Markdown file
 
@@ -31,17 +31,17 @@ ollama serve
 
 ```bash
 git clone <this-repo>
-cd blueprint
+cd voxprint
 cargo build --release
 ```
 
-The binary will be at `./target/release/blueprint`.
+The binary will be at `./target/release/voxprint`.
 
 ### 3. (Optional) Install globally
 
 ```bash
 cargo install --path .
-# now you can run `blueprint` from anywhere
+# now you can run `voxprint` from anywhere
 ```
 
 ---
@@ -50,19 +50,19 @@ cargo install --path .
 
 ```bash
 # Basic — output markdown next to the audio file
-blueprint meeting.m4a
+voxprint meeting.m4a
 
 # Choose output directory
-blueprint meeting.m4a --output ~/Documents/Blueprints
+voxprint meeting.m4a --output ~/Documents/Blueprints
 
 # Extract 3 points instead of 5
-blueprint meeting.m4a -n 3
+voxprint meeting.m4a -n 3
 
 # Include full transcript in the markdown output
-blueprint meeting.m4a --verbose
+voxprint meeting.m4a --verbose
 
 # Transcribe only — skip extraction, save transcript.txt
-blueprint meeting.m4a --transcript-only
+voxprint meeting.m4a --transcript-only
 ```
 
 ### Supported audio formats
@@ -123,7 +123,7 @@ Runs entirely locally — no API costs.
 ## Project structure
 
 ```
-blueprint/
+voxprint/
 ├── Cargo.toml
 └── src/
     ├── main.rs      # CLI entry point + orchestration
